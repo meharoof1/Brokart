@@ -1,0 +1,43 @@
+{% load static %}
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src="{% static 'images/image1.png' %}" width="100%">
+            </div>
+            <div class="col-2">
+                {% if messages %}
+                <div class="message-container">
+                    {% for  message in messages %}
+                   <span class="{{ message.tags }}">{{ message }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="form-container">
+                    <div class="form-btn">
+                        <span onclick="login()">Login</span>
+                        <span onclick="register()">Register</span>
+                        <hr id="Indicator">
+                    </div>
+                    <form id="LoginForm" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" placeholder="Username" required name="username">
+                        <input type="password" placeholder="Password" required name="password">
+                        <button type="submit" class="btn" name="login">Login</button>
+                        <a href="">Forget Password</a>
+                    </form>
+
+                    <form id="RegForm" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="email" name="email"placeholder="Email" required>
+                        <input type="password" name="password" placeholder="Password" required minlength="6">
+                        <input type="text" name="address" placeholder="address" required>
+                        <input type="text" name="phone no" placeholder="phone" required>
+                        <button type="submit" class="btn" name="register" >Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

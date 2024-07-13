@@ -1,0 +1,11 @@
+{% extends 'Blank_layout.html' %}
+<p>products</p>
+{% block content %}
+{% if messages %}
+    {% for  message in messages %}
+   <span class="{{ message.tags }}">{{ message }}</span>
+    {% endfor %}
+{% else %}
+{% include 'cart_container.html' %}
+{% endif %}
+{% endblock content%}
