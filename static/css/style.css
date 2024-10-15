@@ -465,6 +465,20 @@ form a{
     transform: translateX(100px);
     transition: transform 1s;
 }
+.navbar ul#MenuItems li img {
+    vertical-align: middle;
+    margin-left: 10px; /* Adjust spacing as needed */
+}
+
+.navbar ul#MenuItems li a img {
+    display: inline-block;
+}
+
+.navbar ul#MenuItems li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust as needed */
+}
+
 
 /* Media query for menu */
 @media only screen and (max-width: 800px){

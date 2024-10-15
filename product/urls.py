@@ -24,6 +24,7 @@ urlpatterns = [
     path('',views.index,name='home'),
     path('product_list/',views.list_products,name='list_products'),
     path('product_detail/<int:pk>',views.detail_products,name='detail_products'),
+    path('search/', views.search_products, name='search_products'),
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

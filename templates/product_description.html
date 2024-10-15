@@ -11,14 +11,6 @@
             <p>{{product.title}}</p>
             <h1>{{product.title}}</h1>
             <h4>{{product.price}}</h4>
-            <select>
-                <option>Select Size</option>
-                <option>XXL</option>
-                <option>XL</option>
-                <option>L</option>
-                <option>M</option>
-                <option>S</option>
-            </select>
             <form method="post" action="{% url 'add_to_cart' %}" enctype="multipart/form-data">
                 {% csrf_token %}
             <input type="hidden" name="product_id" value="{{product.id}}">
